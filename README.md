@@ -58,24 +58,40 @@ This project is a simple API for managing students and courses.
 
 ---
 
+## Postman Dev Environment Setup
+
+Before using the API, set up a Postman environment:
+
+1. Open Postman and go to the **Environments** tab.
+2. Click **Add** to create a new environment (e.g., `lab_crud_api_dev`).
+3. Add a variable:
+  - **Variable:** `baseUrl`
+  - **Initial Value:** `http://localhost:3000/api`
+  - **Current Value:** `http://localhost:3000/api`
+4. Save the environment and select it before making API requests.
+
+You can now use `{{baseUrl}}` in your requests (e.g., `{{baseUrl}}/students`).
+
+---
+
 ## API Endpoints
 
 ### Health
 
-- `GET /api/health`  
+- `GET {{baseUrl}}/health`  
   Returns API and DB status.
 
 ---
 
 ### Students
 
-- `GET /api/students`  
+- `GET {{baseUrl}}/students`  
   Get all students.
 
-- `GET /api/students/:id`  
+- `GET {{baseUrl}}/students/:id`  
   Get a student by ID.
 
-- `POST /api/students`  
+- `POST {{baseUrl}}/students`  
   Create a new student.  
   **Body:**  
   ```json
@@ -87,7 +103,7 @@ This project is a simple API for managing students and courses.
   }
   ```
 
-- `PUT /api/students/:id`  
+- `PUT {{baseUrl}}/students/:id`  
   Update a student by ID.  
   **Body:**  
   ```json
@@ -98,20 +114,20 @@ This project is a simple API for managing students and courses.
   }
   ```
 
-- `DELETE /api/students/:id`  
+- `DELETE {{baseUrl}}/students/:id`  
   Delete a student by ID.
 
 ---
 
 ### Courses
 
-- `GET /api/courses`  
+- `GET {{baseUrl}}/courses`  
   Get all courses.
 
-- `GET /api/courses/:id`  
+- `GET {{baseUrl}}/courses/:id`  
   Get a course by ID.
 
-- `POST /api/courses`  
+- `POST {{baseUrl}}/courses`  
   Create a new course.  
   **Body:**  
   ```json
@@ -122,7 +138,7 @@ This project is a simple API for managing students and courses.
   }
   ```
 
-- `PUT /api/courses/:id`  
+- `PUT {{baseUrl}}/courses/:id`  
   Update a course by ID.  
   **Body:**  
   ```json
@@ -133,6 +149,6 @@ This project is a simple API for managing students and courses.
   }
   ```
 
-- `DELETE /api/courses/:id`  
+- `DELETE {{baseUrl}}/courses/:id`  
   Delete a course by ID.
 
